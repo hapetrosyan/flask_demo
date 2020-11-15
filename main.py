@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template
+# from flask.templating import render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -27,6 +28,11 @@ def show_subpath(subpath):
 @app.route('/')
 def index():
     return '<H1><b><i>index !!!!!!</i></b></H1>'
+
+
+@app.route('/aaa')
+def aaa():
+    return render_template("a.html")
 
 
 @app.route('/' + greeting)
